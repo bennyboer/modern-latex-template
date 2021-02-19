@@ -1,0 +1,32 @@
+\documentclass{article}
+
+\input{template/template.tex}
+
+% Define meta-data
+\newcommand{\metatitle}{A modern and minimal LaTeX template}
+\newcommand{\metaauthor}{Benjamin Eder}
+\newcommand{\metaemail}{beder@hm.edu}
+
+% Some translations (adapt for the target language)
+\newcommand{\translationpage}{Page}
+
+% Define bibliography file
+\addbibresource{refs.bib}
+
+\begin{document}
+
+    %%%
+    % TITLE
+    %%%
+    \begin{center}
+        \Huge \metatitle \\[0.6cm]
+        \large \metaauthor \hspace{3pt} (\textit{\href{mailto:\metaemail}{\metaemail}}) \\[1.5cm]
+    \end{center}
+
+    \tableofcontents % Uncomment if you don't want a table of contents
+
+    \input{content/content.tex}
+
+    \printbibliography
+
+\end{document}

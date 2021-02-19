@@ -1,0 +1,76 @@
+%%%
+% All the document and template configuration is defined in here.
+%%%
+
+\input{template/packages.tex}
+
+%%%
+% Custom font
+%%%
+
+\setmainfont{Segoe UI}
+
+%%%
+% Custom headers and footers
+%%%
+
+\pagestyle{scrheadings}
+\clearscrheadfoot % Clear default headers and footers
+\ifoot{\metaauthor}
+\cfoot{\translationpage\hspace{2pt}\thepage}
+\ofoot{
+    \includegraphics[width=1.5cm]{assets/graphics/footer-logo.pdf}
+}
+
+%%%
+% Changing section header formatting
+%%%
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+    \node[shape=circle,draw=gray!30,text=black,line width=1mm,inner sep=3pt] (char) {#1};}}
+
+\titleformat{\section}{
+    \LARGE\filcenter % Formatting
+}{\circled{\thesection}}{
+    0cm % Distance between section numbering and header text
+}{
+% Header text prefix
+}
+
+\titleformat{\subsection}{
+    \Large % Formatting
+}{\thesubsection}{
+    0.1cm % Distance between section numbering and header text
+}{
+% Header text prefix
+}
+
+\titleformat{\subsubsection}{
+    \large % Formatting
+}{\thesubsubsection}{
+    0.1cm % Distance between section numbering and header text
+}{
+% Header text prefix
+}
+
+%%%
+% Custom table of contents
+%%%
+
+\makeatletter
+\renewcommand{\tableofcontents}[1][\contentsname]{%
+    \section*{#1}
+
+    \begin{center}
+        \dotfill
+    \end{center}
+
+    \onehalfspacing
+    \@starttoc{toc}
+    \singlespacing
+
+    \begin{center}
+        \dotfill \\[1.5cm]
+    \end{center}
+}
+\makeatother
