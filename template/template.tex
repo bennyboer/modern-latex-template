@@ -61,16 +61,34 @@
 \renewcommand{\tableofcontents}[1][\contentsname]{%
     \section*{#1}
 
-    \begin{center}
-        \dotfill
-    \end{center}
-
     \onehalfspacing
-    \@starttoc{toc}
-    \singlespacing
-
     \begin{center}
-        \dotfill \\[1.5cm]
+        \@starttoc{toc}
     \end{center}
+    \singlespacing
 }
 \makeatother
+
+\contentsmargin{0cm}
+
+\titlecontents{section}
+[0.6cm]
+{\large}
+{\contentslabel[\thecontentslabel.]{1.3em}}
+{}
+{\normalsize\hspace{0.2cm}\titlerule*[0.2cm]{.}\hspace{0.2cm}\contentspage}
+
+\titlecontents{subsection}
+[1.6cm]
+{}
+{\contentslabel[\thecontentslabel]{2.4em}}
+{}
+{\normalsize\hspace{0.2cm}\titlerule*[0.2cm]{.}\hspace{0.2cm}\contentspage}
+
+\titlecontents{subsubsection}
+[2.5cm]
+{}
+{\contentslabel[\thecontentslabel]{3.2em}}
+{}
+{\normalsize\hspace{0.2cm}\titlerule*[0.2cm]{.}\hspace{0.2cm}\contentspage}
+
